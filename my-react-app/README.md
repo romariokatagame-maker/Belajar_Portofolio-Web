@@ -1,16 +1,39 @@
-# React + Vite
+# Portofolio Romario Katagame
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Website portofolio satu halaman yang dibuat dengan React, Vite, dan CSS biasa.
+Tidak ada dependensi UI tambahan yang perlu dipasang. Ilustrasi potret disimpan
+secara lokal di `src/assets/romario-portrait.svg`; Google Fonts membutuhkan
+koneksi internet agar font Playfair Display dan DM Sans dapat dimuat.
 
-Currently, two official plugins are available:
+## Menjalankan secara lokal
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+```bash
+npm install
+npm run dev
+```
 
-## React Compiler
+Periksa hasil produksi dan aturan ESLint dengan:
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+```bash
+npm run build
+npm run lint
+```
 
-## Expanding the ESLint configuration
+## Mengubah data portofolio
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+Konten nama, keahlian, proyek, pendidikan, dan tautan disimpan terpisah dari
+komponen di `src/data/portfolioData.js`. Ganti URL demo dan repositori yang
+masih kosong dengan tautan proyek yang benar. Isi `contact.email` dan
+`contact.linkedinUrl` saat alamat kontak tersedia. Form saat ini membuka
+aplikasi email melalui `mailto:` setelah alamat email dikonfigurasi; form belum
+mengirim data ke backend.
+
+## Deploy ke Vercel
+
+1. Push repository ke GitHub.
+2. Impor repository tersebut di Vercel dan atur **Root Directory** ke
+   `my-react-app`.
+3. Gunakan **Build Command** `npm run build` dan **Output Directory** `dist`.
+   Vercel akan mendeteksi Vite secara otomatis.
+4. Deploy. Setiap push berikutnya ke branch yang terhubung akan memicu deploy
+   baru.
